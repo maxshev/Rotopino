@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Rotopino</title>
+</head>
+
+<body>
+    <div class="container center-block w-50 p-3 mt-3 rounded-3 shadow-lg" style="background-color: lightblue;">
+        <form class="needs-validation was-validated" >
+            <div class="form-floating" >
+              <input id="input" class="form-control" type="text" placeholder="Imię i Nazwisko" onfocus="getScript()" oninput="checkForm()" required/>
+              <label class="w-100" for="input">Imię i Nazwisko</label>
+              <div class="invalid-feedback">
+                Proszę wpisać Imię i Nazwisko.
+              </div>
+              <div class="valid-feedback">
+                Wygląda dobrze!
+              </div>
+            </div>
+            <div class="form-floating">
+              <textarea id="textarea" class="form-control mt-3" placeholder="Wiadomość" onfocus="getScript()" oninput="checkForm()" style="height: 150px" required></textarea>
+              <label class="w-100" for="textarea">Wiadomość</label>
+              <div class="invalid-feedback">
+                Proszę wprowadzić wiadomość w polu tekstowym.
+              </div>
+              <div class="valid-feedback">
+                Wygląda dobrze!
+              </div>
+            </div>
+            </label>
+            <div class="mt-3 text-center">
+              <a href="#" role="button" type="submit" class="btn btn-primary disabled" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="addData()" >Prześlij</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="infoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Wiadomość</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearData()"></button>
+          </div>
+          <div class="modal-body">
+          <div>
+            <span>Wiadomość od:</span>
+            <span id="name" class="h6"></span>
+          </div>
+        </br>
+          <div>
+            <span>Treść wiadomośći:</span>
+            <div id='message' class="h6"></div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearData()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script defer src="./script/script.js"></script>
+</body>
+</html>
